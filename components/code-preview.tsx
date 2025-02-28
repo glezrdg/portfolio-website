@@ -1,45 +1,48 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, useAnimation } from "framer-motion"
-import { Copy } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism"
+import { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { Copy } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { zTouch } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface CodePreviewProps {
-  code: string
+  code: string;
 }
 
 export function CodePreview({ code }: CodePreviewProps) {
-  const [copied, setCopied] = useState(false)
-  const [displayedCode, setDisplayedCode] = useState("")
-  const controls = useAnimation()
+  const [copied, setCopied] = useState(false);
+  const [displayedCode, setDisplayedCode] = useState("");
+  const controls = useAnimation();
 
   const copyToClipboard = async () => {
-    await navigator.clipboard.writeText(code)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
+    await navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   useEffect(() => {
     const typeCode = async () => {
-      const lines = code.split("\n")
+      const lines = code.split("\n");
       for (let i = 0; i < lines.length; i++) {
         for (let j = 0; j <= lines[i].length; j++) {
           setDisplayedCode(
-            (prev) => prev.split("\n").slice(0, i).join("\n") + (i > 0 ? "\n" : "") + lines[i].slice(0, j),
-          )
-          await new Promise((resolve) => setTimeout(resolve, 10)) // Adjust typing speed here
+            (prev) =>
+              prev.split("\n").slice(0, i).join("\n") +
+              (i > 0 ? "\n" : "") +
+              lines[i].slice(0, j)
+          );
+          await new Promise((resolve) => setTimeout(resolve, 10)); // Adjust typing speed here
         }
         if (i < lines.length - 1) {
-          await new Promise((resolve) => setTimeout(resolve, 100)) // Pause between lines
+          await new Promise((resolve) => setTimeout(resolve, 100)); // Pause between lines
         }
       }
-    }
+    };
 
-    typeCode()
-  }, [code])
+    typeCode();
+  }, [code]);
 
   return (
     <div className="relative group rounded-lg overflow-hidden">
@@ -66,7 +69,7 @@ export function CodePreview({ code }: CodePreviewProps) {
       <motion.div animate={controls}>
         <SyntaxHighlighter
           language="jsx"
-          style={vscDarkPlus}
+          style={zTouch}
           customStyle={{
             margin: 0,
             padding: "1rem",
@@ -79,6 +82,5 @@ export function CodePreview({ code }: CodePreviewProps) {
         </SyntaxHighlighter>
       </motion.div>
     </div>
-  )
+  );
 }
-

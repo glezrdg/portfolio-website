@@ -21,7 +21,7 @@ const projects = [
     technologies: ["Next.js", "React", "NodeJS", "Express", "MongoDB"],
   },
   {
-    title: "Civicole",
+    title: "Sibaikole",
     description: "Dynamic presentation website for a construction company.",
     image: "/img/sibaikole.webp",
     link: "https://sibaikole.com",
@@ -42,7 +42,7 @@ const projects = [
     technologies: ["Next.js", "Tailwind CSS"],
   },
   {
-    title: "Grupo In-App",
+    title: "Grupo Inap",
     description: "Corporate website for a leading industrial group.",
     image: "/img/grupo-inap.webp",
     link: "https://www.grupoinap.com/",
