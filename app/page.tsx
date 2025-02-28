@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { ChevronRight, Code2, Terminal } from "lucide-react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { CodePreview } from "@/components/code-preview"
-import { TechStackAnimation } from "@/components/tech-stack-animation"
-import AboutSection from "@/components/about-section"
-import ProjectsSection from "@/components/projects-section"
-import ContactSection from "@/components/contact-section"
+import { useEffect, useState, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ChevronRight, Code2, Terminal } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { CodePreview } from "@/components/code-preview";
+import { TechStackAnimation } from "@/components/tech-stack-animation";
+import AboutSection from "@/components/about-section";
+import ProjectsSection from "@/components/projects-section";
+import ContactSection from "@/components/contact-section";
 
 export default function Home() {
-  const { scrollY } = useScroll()
-  const y = useTransform(scrollY, [0, 300], [0, 100])
-  const opacity = useTransform(scrollY, [0, 300], [1, 0])
-  const [mounted, setMounted] = useState(false)
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 300], [0, 100]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const [mounted, setMounted] = useState(false);
 
-  const aboutRef = useRef(null)
-  const projectsRef = useRef(null)
-  const contactRef = useRef(null)
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   const codeString = `
 import React from 'react';
@@ -41,7 +41,7 @@ function App() {
       <Card>
         <h3 className="text-xl font-bold">Backend Solutions</h3>
         <p className="text-gray-600">
-          Node.js • PostgreSQL • API • MongoDB • Express • .NET • SQL
+          Node.js • MongoDB • Express • .NET • SQL
         </p>
       </Card>
     </div>
@@ -49,7 +49,7 @@ function App() {
 }
 
 export default App;
-  `.trim()
+  `.trim();
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
@@ -68,7 +68,7 @@ export default App;
             className="max-w-4xl mx-auto text-center space-y-8"
           >
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 to-50% to-slate-200"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 to-50% to-slate-200 pb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -82,8 +82,9 @@ export default App;
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              A software developer specializing in building exceptional digital experiences. Currently focused on
-              building accessible, human-centered products.
+              A software developer specializing in building exceptional digital
+              experiences. Currently focused on building accessible,
+              human-centered products.
             </motion.p>
 
             <motion.div
@@ -130,7 +131,19 @@ export default App;
             transition={{ duration: 0.5, delay: 1 }}
             className="mt-12 flex flex-wrap justify-center gap-2"
           >
-            {["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "AWS"].map((tech, i) => (
+            {[
+              "Javascript",
+              "React",
+              "Next.js",
+              "Angular",
+              "Node.js",
+              "MongoDB",
+              "Express",
+              "Git",
+              "Azure",
+              "Docker",
+              "AWS",
+            ].map((tech, i) => (
               <motion.span
                 key={tech}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -159,17 +172,17 @@ export default App;
                 <div className="flex items-center gap-2">
                   <Code2 className="w-4 h-4 text-primary" />
                   <span className="text-slate-400">years_of_experience:</span>
-                  <span className="text-green-400">2</span>
+                  <span className="text-green-400">3</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Code2 className="w-4 h-4 text-primary" />
                   <span className="text-slate-400">projects_completed:</span>
-                  <span className="text-blue-400">50+</span>
+                  <span className="text-blue-400">+20</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Code2 className="w-4 h-4 text-primary" />
                   <span className="text-slate-400">technologies_mastered:</span>
-                  <span className="text-purple-400">15+</span>
+                  <span className="text-purple-400">+5</span>
                 </div>
               </div>
             </div>
@@ -202,6 +215,5 @@ export default App;
       {/* Contact Section */}
       <ContactSection ref={contactRef} />
     </div>
-  )
+  );
 }
-

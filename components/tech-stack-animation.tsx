@@ -1,40 +1,55 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Image from "next/image"
-
+import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import Image from "next/image";
 const technologies = [
-  { name: "React", logo: "/react-logo.svg" },
-  { name: "Angular", logo: "/angular-logo.svg" },
-  { name: "Tailwind CSS", logo: "/tailwind-logo.svg" },
-  { name: "MongoDB", logo: "/mongodb-logo.svg" },
-  { name: "Express", logo: "/express-logo.svg" },
-]
+  { name: "React", logo: "/icons/React-icon.svg" },
+  { name: "Angular", logo: "/icons/Angular_full_color_logo.svg" },
+  { name: "Next.js", logo: "/icons/nextjs-icon-svgrepo-com.svg" },
+  { name: "Tailwind CSS", logo: "/icons/Tailwind_CSS_Logo.svg" },
+  { name: "Node.js", logo: "/icons/Node.js_logo.svg" },
+  { name: "MongoDB", logo: "/icons/mongodb-svgrepo-com.svg" },
+  { name: "Express", logo: "/icons/express-js-icon.svg" },
+  { name: "Docker", logo: "/icons/docker-svgrepo-com.svg" },
+  { name: "Git", logo: "/icons/Git-logo.svg" },
+];
 
 export function TechStackAnimation() {
   return (
-    <div className="bg-slate-800 p-6 rounded-lg shadow-lg">
+    <div className="bg-slate-800 p-6 rounded-lg shadow-lg overflow-hidden">
       <h3 className="text-xl font-semibold mb-4 text-slate-100">Tech Stack</h3>
-      <div className="relative h-32">
-        {technologies.map((tech, index) => (
-          <motion.div
-            key={tech.name}
-            className="absolute inset-0 flex items-center justify-center"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.5,
+      <div className="relative h-20">
+        <motion.div
+          className="flex absolute"
+          animate={{
+            x: [0, -100 * technologies.length],
+          }}
+          transition={{
+            x: {
               repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-              repeatDelay: 2,
-              delay: index * 2,
-            }}
-          >
-            <Image src={tech.logo || "/placeholder.svg"} alt={tech.name} width={64} height={64} />
-          </motion.div>
-        ))}
+              repeatType: "loop",
+              duration: 50,
+              ease: "linear",
+            },
+          }}
+        >
+          {[...technologies, ...technologies].map((tech, index) => (
+            <div
+              key={`${tech.name}-${index}`}
+              className="flex items-center justify-center w-[100px] h-20 mx-4"
+            >
+              <Image
+                src={tech.logo || "/placeholder.svg"}
+                alt={tech.name}
+                width={50}
+                height={50}
+                className="object-contain"
+              />
+            </div>
+          ))}
+        </motion.div>
       </div>
     </div>
-  )
+  );
 }
-
