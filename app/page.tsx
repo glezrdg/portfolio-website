@@ -71,7 +71,7 @@ export default App;
             <DecryptedText
               text="Germán González"
               speed={50}
-              maxIterations={80}
+              maxIterations={65}
               className="revealed text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 to-50% to-slate-200 pb-4"
               parentClassName="all-letters"
               encryptedClassName="encrypted"
