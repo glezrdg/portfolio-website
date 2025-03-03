@@ -62,51 +62,56 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-slate-100">About Me</h2>
-            <p className="text-slate-300 mb-6">
-              I'm a passionate software developer with a keen eye for design and
-              a love for creating seamless user experiences. With{" "}
-              <strong>
-                {experience.years} years, {experience.months} months,{" "}
-                {experience.days} days
-              </strong>{" "}
-              of experience in the field, I've had the opportunity to work on a
-              diverse range of projects, from small business websites to
-              large-scale enterprise applications.
-            </p>
-            <p className="text-slate-300 mb-6">
-              My expertise lies in frontend development, particularly with React
-              and Next.js, but I'm also well-versed in backend technologies. I
-              believe in writing clean, efficient code and always strive to stay
-              updated with the latest industry trends and best practices.
-            </p>
+            <div className="w-full flex flex-col justify-center">
+              <h2 className="text-3xl font-bold mb-6 text-slate-100">
+                About Me
+              </h2>
+              <p className="text-slate-300 mb-6">
+                I'm a passionate software developer with a keen eye for design
+                and a love for creating seamless user experiences. With{" "}
+                <strong>
+                  {experience.years} years, {experience.months} months,{" "}
+                  {experience.days} days
+                </strong>{" "}
+                of experience in the field, I've had the opportunity to work on
+                a diverse range of projects, from small business websites to
+                large-scale enterprise applications.
+              </p>
+              <p className="text-slate-300 mb-6">
+                My expertise lies in frontend development, particularly with
+                React and Next.js, but I'm also well-versed in backend
+                technologies. I believe in writing clean, efficient code and
+                always strive to stay updated with the latest industry trends
+                and best practices.
+              </p>
 
-            <div className="  flex flex-col items-center">
-              <Link
-                href="/documents/German Gonzalez - Resume.pdf"
-                download
-                target="_blank"
-              >
-                <Button className="mr-2" size="lg">
-                  Descargar CV Español
-                </Button>
-              </Link>
-              <Link
-                href="/documents/German Gonzalez CV English.pdf"
-                download
-                target="_blank"
-              >
-                <Button size="lg" className="mt-2">
-                  Download Resume
-                </Button>
-              </Link>
+              <div className="  flex flex-col md:flex-row">
+                <Link
+                  href="/documents/German Gonzalez - Resume.pdf"
+                  download
+                  target="_blank"
+                >
+                  <Button className="mr-2" size="lg">
+                    Descargar CV Español
+                  </Button>
+                </Link>
+                <Link
+                  href="/documents/German Gonzalez CV English.pdf"
+                  download
+                  target="_blank"
+                >
+                  <Button size="lg" className="mt-2 md:mt-0">
+                    Download Resume
+                  </Button>
+                </Link>
+              </div>
             </div>
           </motion.div>
           <motion.div
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="relative"
+            className="relative flex items-center justify-center"
           >
             <Image
               src="/pp.jpg"
@@ -115,7 +120,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
               height={400}
               className="rounded-lg shadow-xl"
             />
-            <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-4 rounded-lg shadow-lg">
+            <div className="absolute left-0 bottom-0 lg:-bottom-6 lg:left-14 bg-primary text-primary-foreground p-4 rounded-lg shadow-lg">
               <p className="text-2xl font-bold ">
                 {experience.years}y {experience.months}m {experience.days}d{" "}
                 {experience.hours}h {experience.minutes}m {experience.seconds}s

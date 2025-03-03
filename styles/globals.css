@@ -92,3 +92,13 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+pre{ 
+  font-size: 10px !important;
+  line-height: 5px;
+}
+code{
+  font-size: 10px !important;
+  background-color: red;
+}

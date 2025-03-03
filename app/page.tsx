@@ -10,6 +10,7 @@ import { TechStackAnimation } from "@/components/tech-stack-animation";
 import AboutSection from "@/components/about-section";
 import ProjectsSection from "@/components/projects-section";
 import ContactSection from "@/components/contact-section";
+import DecryptedText from "@/components/DecryptedText";
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -67,14 +68,24 @@ export default App;
             style={{ y, opacity }}
             className="max-w-4xl mx-auto text-center space-y-8"
           >
-            <motion.h1
+            <DecryptedText
+              text="Germán González"
+              speed={50}
+              maxIterations={100}
+              className="revealed text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 to-50% to-slate-200 pb-4"
+              parentClassName="all-letters"
+              encryptedClassName="encrypted"
+              animateOn="view"
+            />
+
+            {/* <motion.h1
               className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 to-50% to-slate-200 pb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               Crafting digital experiences through elegant code
-            </motion.h1>
+            </motion.h1> */}
 
             <motion.p
               className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto"
