@@ -183,7 +183,7 @@ export default App;
                 <div className="flex items-center gap-2">
                   <Code2 className="w-4 h-4 text-primary" />
                   <span className="text-slate-400">years_of_experience:</span>
-                  <span className="text-green-400">3</span>
+                  <span className="text-green-400">4</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Code2 className="w-4 h-4 text-primary" />
