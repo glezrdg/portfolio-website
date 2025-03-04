@@ -36,11 +36,11 @@ const getExperienceTime = (startDate: string) => {
 };
 
 const AboutSection = forwardRef<HTMLElement>((props, ref) => {
-  const [experience, setExperience] = useState(getExperienceTime("2022-04-27"));
+  const [experience, setExperience] = useState(getExperienceTime("2021-04-27"));
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setExperience(getExperienceTime("2022-04-27"));
+      setExperience(getExperienceTime("2021-04-27"));
     }, 1000); // Update every second
 
     return () => clearInterval(interval); // Cleanup interval on unmount
