@@ -6,6 +6,7 @@ import { Copy } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface CodePreviewProps {
   code: string;
@@ -79,7 +80,7 @@ export function CodePreview({ code }: CodePreviewProps) {
         <motion.div animate={controls}>
           <SyntaxHighlighter
             language="jsx"
-            style={materialDark}
+            style={vscDarkPlus}
             customStyle={{
               margin: 0,
               padding: "1rem",
@@ -87,6 +88,11 @@ export function CodePreview({ code }: CodePreviewProps) {
               background: "transparent",
             }}
             showLineNumbers={true}
+            codeTagProps={{
+              style: {
+                fontSize: "1rem",
+              },
+            }}
             // wrapLines={true}
           >
             {displayedCode}
