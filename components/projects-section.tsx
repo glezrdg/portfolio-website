@@ -35,6 +35,14 @@ const projects = [
     technologies: ["React", "NodeJS", "Express", "MongoDB"],
   },
   {
+    title: "Jamie Gruber Personal Website",
+    description:
+      "Personal website for Jamie Gruber, an Investor, Youtuber, Entrepreneur, Mentor.",
+    image: "/img/jamie-preview.webp",
+    link: "https://v0-jaime-gruber.vercel.app/",
+    technologies: ["Next.js", "Nest.js", "MongoDB"],
+  },
+  {
     title: "Bayamo Medical Center",
     description:
       "A modern medical center website featuring appointment scheduling and doctor profiles.",
