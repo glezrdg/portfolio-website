@@ -23,7 +23,7 @@ const projects = [
   {
     title: "Sibaikole",
     description: "Dynamic presentation website for a construction company.",
-    image: "/img/sibaikole.webp",
+    image: "/img/sibaikole-preview.webp",
     link: "https://sibaikole.com",
     technologies: ["Next.js", "Tailwind CSS"],
   },
@@ -35,10 +35,26 @@ const projects = [
     technologies: ["React", "NodeJS", "Express", "MongoDB"],
   },
   {
+    title: "Bayamo Medical Center",
+    description:
+      "A modern medical center website featuring appointment scheduling and doctor profiles.",
+    image: "/img/bmc-previe.webp",
+    link: "https://bayamomedicalcenter.com",
+    technologies: ["Next.js", "Tailwind CSS"],
+  },
+  {
     title: "Llaves Arias",
     description: "Professional locksmith service management system.",
     image: "/img/llavesarias.webp",
     link: "https://llavesarias.com",
+    technologies: ["Next.js", "Tailwind CSS"],
+  },
+  {
+    title: "Condal International",
+    description:
+      "International moving company from the Dominican Republic, with more than 20 years of experience.",
+    image: "/img/condal-preview.webp",
+    link: "https://condal.com.do/",
     technologies: ["Next.js", "Tailwind CSS"],
   },
   {
@@ -49,12 +65,12 @@ const projects = [
     technologies: ["Next.js", "Tailwind CSS"],
   },
   {
-    title: "Bayamo Medical Center",
+    title: "Biodem ",
     description:
-      "A modern medical center website featuring appointment scheduling and doctor profiles.",
-    image: "/img/bayamo.webp",
-    link: "https://bayamomedicalcenter.com",
-    technologies: ["React", "Tailwind CSS"],
+      "Biomem is a company focused on biomedical support, specializing in laser equipment.",
+    image: "/img/biodem.webp",
+    link: "https://v0-biodem-website-design-8fqol4.vercel.app/",
+    technologies: ["Next.js", "Tailwind CSS", "v0.dev"],
   },
 ];
 
